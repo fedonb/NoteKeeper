@@ -22,7 +22,7 @@ class NoteListActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         binding.fab.setOnClickListener { view ->
-            val activityIntent = Intent(this,MainActivity::class.java)
+            val activityIntent = Intent(this,NoteActivity::class.java)
             startActivity(activityIntent)
         }
 
@@ -31,7 +31,7 @@ class NoteListActivity : AppCompatActivity() {
                 DataManager.notes)
 
         listNotes.setOnItemClickListener{parent, view, position, id ->
-            val activityIntent = Intent(this, MainActivity::class.java)
+            val activityIntent = Intent(this, NoteActivity::class.java)
             activityIntent.putExtra(NOTE_POSITION, position)
             startActivity(activityIntent)
         }
